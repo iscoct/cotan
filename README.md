@@ -22,12 +22,9 @@ Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y prior
     - Formato de visualización de las comandas.
     - Registro de la información de cada comanda: Tiempo medio de cada tarea, salida de cada parte de la comanda (bebida, entrante, primer plato, ...).
 
-## Contexto
+### Más información
 
-### Suposiciones
-
-- La persona propietaria o administradora del software describe las bebidas, entrantes, platos, postres.
-- La persona propietaria o administradora del software describe los pasos de cada plato.
-- La persona propietaria o administradora del software define cuál es su personal y de qué se encarga cada uno.
-- Los camareros envían las comandas con el software.
-- El staff de cocina indican cuando comienzan y terminan cada paso.
+- [Contexto](docs/contexto.md)
+- [Personas](docs/personas.md)
+- [Objetivos](docs/objetivos/)
+- [Progreso del Proyecto](https://github.com/iscoct/cotan/issues): Ahí se pueden ver todos los milestones e historias de usuarios las cuales contienen descripción para poder desarrollar el proyecto.
