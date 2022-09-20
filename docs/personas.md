@@ -1,71 +1,57 @@
 # Personas
 
-## Pita Atlántico
+## Juan Pablo Castello
 
-### Situación Actual
+Estudiante de 24 años que ha acabado la carrera de Filosofía Hispánica hace 6 meses.
+Trabaja desde hace hace 4 meses en un bar como camarero para ganarse un dinero antes de empezar las oposiciones.
+El bar para el que trabaja es bastante grande, haciendo que sea difícil algunas veces acordarse de la situación actual de cada mesa.
 
-El restaurante Pita Atlántico tiene muchas mesas y una cantidad de empleados que hace que en las horas puntas se tarde bastante en poder tomar notas y servir las bebidas a cada uno de los comensales.
-Esto se traduce en que haya personas que tengan que estar esperando mesa y algunas de ellas no quieran esperar lo necesario para sentarse y se vayan.
-El dueño de este restaurante quiere mejorar la velocidad de todo el proceso de servir las comandas.
+En el bar, sus responsabilidades eran tomar notas de las comandas en papel y una vez apuntada entre 1 y 3 comandas iba a la barra para dejar la comanda en cocina y decir a su compañero Matías que prepara las bebidas, las bebidas que debía preparar para qué mesa.
+Una vez se las decía de vez en cuando éste le tenía preparadas bebidas y le decía la mesa a la que lo tiene que entregar.
 
-#### Organización Actual
+Desde que el dueño del bar pidió que usara en el bar el nuevo sistema, ahora sólo debe apuntar lo que pide cada mesa en una aplicación en el móvil.
+Cada cierto tiempo recibe además una notificación en el móvil que le indica que las bebidas para una mesa están preparadas para ser entregadas.
 
-La responsabilidad del camarero es tomar nota, decir la comanda en cocina, recoger las bebidas cuando están preparadas (las prepara otra persona) y llevarlas a la mesa.
+## Teresa Peña
 
-Como no sabe cuándo están las bebidas, toma una serie de notas, algunas veces una sola, y las lleva a cocina para que vayan preparándolas y para ver qué bebidas ya están preparadas.
+Madre de 2 niñas, tiene 35 años y lleva 10 años en el sector.
+Le gusta trabajar, recibir a la gente y sentirse que está permitiendo que la gente disfrute de un buen rato aunque algunas veces se siente cansada de la rutina.
 
-La situación de la cocina es correcta y el dueño no está preocupado por la organización de ésta.
+Trabaja actualmente en la barra un bar grande donde sirve bebidas y postres a los comensales.
+Normalmente, tiene un compañero Francisco que toma notas a los comensales y cada cierto tiempo viene a la barra para decirle las bebidas y postres que debe de preparar.
 
-### Situación Ideal
+Algunas veces tarde en venir y se quedan bastantes bebidas en la barra teniendo que esperar a que se lleve unas cuantas para poder seguir.
 
-El camarero empieza a tomar comandas.
-La comanda llega automáticamente a los compañeros, a las personas que preparan bebidas y cocina.
-Se preparan las bebidas.
-El camarero es notificado cuando las bebidas de una mesa están ya preparadas.
-El camarero las recoge y las lleva.
+Últimamente, desde que el dueño nos pidió que usaramos un nuevo sistema, ahora Francisco toma las comandas pero sólo viene a la barra cuando tengo preparadas las bebidas y postres de una mesa.
+Yo veo una pantalla en la barra que me indica cuántas bebidas y postres faltan por entregar para cada mesa y cuando las tengo preparadas indico que ya las tengo.
+Desde entonces, no me pasa que se me quedan tantas bebidas en la barra.
 
-#### Organización Ideal
+## José Luis Rus
 
-Esta organización le permite al camarero tener que ahorrarse el tiempo en llevar la comanda a cocina e ir periódicamente revisando cuándo están las bebidas.
+Chef de 30 años con 2 años de experiencia en el sector.
+Le gusta hacer deporte y preparar platos nuevos todas las semanas.
 
-Esto se traduce en una rotación más rápida, pues la gente piden nota más rápido y la cocina recibe órdenes más rápido.
+Lleva medio año en su último trabajo y está contento porque el dueño le permite meter platos nuevos en la carta como plato del día cada semana.
+Su único problema era que los primeros 3 meses tuvo a un equipo de pinches bastante competente, pero desde que rotaron unos pocos, la cocina se lía cuando entran muchas comandas.
 
-## Venta Esteban
+Se lían porque algunas preparan lo que no deben de preparar y salen platos de clientes muy tarde o algunas veces hay un plato de un primero que tarda 10 minutos que otro de la misma mesa, mucha diferencia en algunos casos.
 
-El propietario de la Venta Esteban tiene un número de mesas moderado, la organización de los camareros y las bebidas es correcta.
-Sin embargo, la cocina cuando todas las mesas están ocupadas, que suele pasar en las horas puntas, se lían con la organización de ésta, y aunque los platos que preparan son muy buenos, mucho platos tardan en salir porque no hay suficientes platos preparándose a la vez.
+Le propuse al jefe de utilizar un sistema que nos ayuda a mejorar la organización.
+Lo vió bien y ahora tenemos un altavoz con un asistente que nos va diciendo los pasos que debemos ir realizando en cocina y los platos que faltan para cada mesa.
 
-Esto provoca algunas veces descontento entre los comensales y la rotación entre mesas es baja, lo cual hace que haya mesas esperando fuera en las horas puntas.
+Parece que ahora que les van diciendo los pasos uno tras otro tengo que estar menos pendiente de ellos y podemos entregar los platos más rápido, espero que siga así.
 
-### Situación Ideal
+## Serafin Andreu
 
-La cocina recibe órdenes sobre los pasos a realizar y la organización óptima de la cocina para que el mayor número de platos preparándose en cada momento.
+Chef de 40 años con 15 años de experiencia en el sector.
+Le gusta leer, viajar e irse a bares y restaurantes a probar la comida que preparan otros chefs, muchos de ellos amigos.
 
+Lleva en el restaurante en el que trabaja 5 años y se lleva bien con el dueño.
+El equipo de cocina lleva mucho tiempo junto y trabajan muy bien, se siente bastante orgulloso de su equipo.
 
-## 100 Montaditos
+El único problema que está teniendo en los últimos meses es que los camareros tardan mucho tiempo en decir las comandas de las mesas y en llevarse los platos porque el restaurante es muy grande.
 
-### Situación Actual
+En los últimos meses, tras hablar con el dueño, están probando un nuevo sistema donde los camareros apuntas las comandas y automáticamente hay un altavoz que nos va diciendo los platos a realizar para cada mesa.
+El sistema nos permitía la opción de que nos dijera los pasos a seguir, pero creo que la cocina lo hace bastante bien por ahora y sólo pedimos que nos diga y recuerde los platos que quedan por comanda.
 
-Unos comensales llegan a los 100 montaditos, se sientan para guardar el sitio y uno de la mesa de ellos espera la cola para poder pedir su pedido, que dependiendo de la hora puede ser larga.
-El camarero apunta el pedido, rellena las bebidas, les da las bebidas a la persona que pide y esa persona vuelve con su grupo con las bebidas.
-Cuando la comida está, alguien tiene que levantarse a por la comida a la barra y volver al grupo. 
-
-### Situación Ideal
-
-Unos comensales llegan a los 100 montaditos, se sientan, piden en una aplicación su pedido y pagan en ese momento su pedido (este último paso es importante para que no haya estafas o bromas).
-
-La aplicación avisa a los comensales de que está la bebida, uno o varios van y vuelven.
-La aplicación avisa a los comensales de que está la comida, uno o varios van y vuelven.
-
-#### Mejora
-
-Una persona o varias personas no tienen que esperar la cola y se piden más rápido, librando al camarero de la tarea de apuntar los pedidos.
-
-Esto se traduce en una mejor experiencia para el usuario, lo cual puede estar dispuesto a ir o pagar más y a aumentar la velocidad de rotación de cada comensal, lo cual se traduce en un mayor número total de comensales.
-
-#### Nuestro Sistema
-
-Nuestro sistema en esta asignatura no va a implementar la pasarela de pago ni todo este sistema, pero como la idea permite este tipo de solución.
-El sistema, permite a nuestro camarero pedir, lo cual sería igual que si fuera un pedido de un cliente, al camarero que sirve las bebidas le aperecería las bebidas a servir y a la cocina la comida a preparar.
-Cuando el camarero y cocina terminan sus pedidos avisan al usuario por la aplicación.
-La manera en que le aparece a la persona que sirve las bebidas puede ser una pantalla y la cocina puede recibir las órdenes a través de una pantalla o si no fuera posible, un agente virtual como Alexa, Siri o Google Assistant.
+Cuando terminamos los platos de la comanda sólo decimos que los primeros, segundos o entrantes de la comanda de una mesa están preparados y parece que les llega una notificación al camarero, así parece que tardan menos.
