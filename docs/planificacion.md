@@ -17,9 +17,17 @@ Para conseguir aportar los beneficios a los usuarios descritos en las historias 
 - [Un módulo que defina la estructura de datos que va a modelar el sistema del bar y las entidades que colaboren en nuestro sistema, sin implementación.](https://github.com/iscoct/cotan/milestone/4)
 - [Un módulo que implemente la lista de cosas a entregar en las comandas, de tal manea que permita introducir datos y visualizar datos para dicha cola.](https://github.com/iscoct/cotan/milestone/5)
 - [Una API en el módulo anterior que permita, introducir las bebidas, comidas, mesas y partes relacionadas de un bar y visualizar éstas.](https://github.com/iscoct/cotan/milestone/6)
-- [Una API en el módulo anterior que permita introducir comandas y visualizar bebidas y platos que quedan por entregar.](https://github.com/iscoct/cotan/milestone/7)
+- [Una API en el módulo anterior que permita introducir comandas y visualizar bebidas y platos que quedan por entregar.](https://github.com/iscoct/cotan/milestone/7): Este milestone resuelve los siguentes problemas:
+    - El envío de comandas.
+    - Formato de visualización de las comandas.
+    - Registro de la información de cada comanda: La información relacionada con la comanda debe de ser guardada al completarse con el momento en el que se hizo la comanda, se prepararon y se entregaron las bebidas y las comidas en las mesas que sirva como un histórico para que un futuro se pueda hacer un analíticas con la información histórica.
 - [Estructura de datos en el módulo anterior que modele los pasos a realizar en la preparación de los platos del bar](https://github.com/iscoct/cotan/milestone/8)
 - [Una API en el módulo anterior que muestre la lista de platos a preparar dividida por el número de pasos a realizar](https://github.com/iscoct/cotan/milestone/9)
 - [Modificación de la API para que muestre la lista de cosas que quedan por hacer en función del rol de la persona del bar](https://github.com/iscoct/cotan/milestone/10)
 - [Creación de la estructura de datos y la API en el módulo para que se puedan introducir y visualizar los instrumentos de la cocina y los instrumentos que son necesarios para realizar cada paso de un plato.](https://github.com/iscoct/cotan/milestone/12)
-- [Modificación de la API para que muestre los pasos a realizar en cocina de la forma más optimizada posible](https://github.com/iscoct/cotan/milestone/11)
+- [Modificación de la API para que muestre los pasos a realizar en cocina de la forma más optimizada posible](https://github.com/iscoct/cotan/milestone/11): Este milestone implementa la lógica de negocio siguiente:
+    - Priorización de los pasos a realizar.
+    - Priorización de comandas según las subpartes de éstas (bebidas, entrantes, primeros platos, ...).
+    - Asignación de tareas.
+    - Concurrencia entre todas las tareas, pasos y comandas.
+    - Registro de la comanda: Se debe de guardar un histórico de las comandas igual que antes pero ahora se deberá de añadir el momento en el que se realizaron los pasos de cada plato.
