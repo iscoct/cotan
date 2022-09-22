@@ -22,12 +22,9 @@ Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y prior
     - Formato de visualización de las comandas.
     - Registro de la información de cada comanda: Tiempo medio de cada tarea, salida de cada parte de la comanda (bebida, entrante, primer plato, ...).
 
-## Contexto
+## Mas documentación
 
-### Suposiciones
-
-- La persona propietaria o administradora del software describe las bebidas, entrantes, platos, postres.
-- La persona propietaria o administradora del software describe los pasos de cada plato.
-- La persona propietaria o administradora del software define cuál es su personal y de qué se encarga cada uno.
-- Los camareros envían las comandas con el software.
-- El staff de cocina indican cuando comienzan y terminan cada paso.
+- [Contexto](./docs/contexto.md): Se describe el contexto del problema, información sobre el sector de la gastronomía y beneficios de nuestro sistema.
+- [Personas](./docs/personas.md)
+- [Planificación](./docs/planificacion.md)
+- [Ejemplo Situaciones Actuales vs Ideales](./docs/ejem_situaciones_actual_vs_ideal.md): Para ejemplificar los beneficios del sistema, se compara la organización actual de ciertos bares y restaurantes con la organización que este sistema propone. Se exponen los beneficios de ejecutar la organización que este sistema propone.
