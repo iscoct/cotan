@@ -1,50 +1,22 @@
 package models
 
-type TipoPlato int64
+type TipoPlato string
 
 const (
-	Postre TipoPlato = iota
-	Entrante
-	Primero
-	Segundo
+	Postre TipoPlato = "postre"
+	Entrante 		 = "entrante"
+	Primero 		 = "primero"
+	Segundo 		 = "segundo"
 )
 
-func (s TipoPlato) String() string {
-	switch s {
-	case Postre:
-		return "postre"
-	case Entrante:
-		return "entrante"
-	case Primero:
-		return "primero"
-	case Segundo:
-		return "segundo"
-	}
-	return ""
-}
-
-type EstadoPlato int64
+type EstadoPlato string
 
 const (
-	EnEspera EstadoPlato = iota
-	Preparando
-	ParaEntregar
-	Entregado
+	EnEspera EstadoPlato = "en espera"
+	Preparando 			 = "preparándose"
+	ParaEntregar 		 = "para entregar"
+	Entregado 			 = "entregado"
 )
-
-func (s EstadoPlato) String() string {
-	switch s {
-	case EnEspera:
-		return "en espera"
-	case Preparando:
-		return "preparándose"
-	case ParaEntregar:
-		return "para entregar"
-	case Entregado:
-		return "entregado"
-	}
-	return ""
-}
 
 type Plato struct {
 	Nombre string
