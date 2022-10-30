@@ -1,0 +1,5 @@
+lenguaje: go
+
+automatizar:
+  fichero: Makefile
+  orden: make
