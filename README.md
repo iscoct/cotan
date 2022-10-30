@@ -1,30 +1,19 @@
-# Optimizador de Restaurantes
+# Instalar
 
-## Definición del Problema
+## Make
 
-### Definición del Problema General
+[Aquí](https://linuxhint.com/install-make-ubuntu/) se ve cómo instalar **make** en Ubuntu.
 
-Tiempo medio que se espera entre que se pide una comanda en un bar o restaurante y el tiempo en que se reciben las bebidas, platos o tapas y postres de dicha comanda.
+[Aquí](https://www.technewstoday.com/install-and-use-make-in-windows/) en Windows.
 
-### Definición del Problema en el que nos vamos a enfocar
+## Comandos Importantes
 
-Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y priorización de pasos a seguir para la ejecución de las comandas (servir bebidas, dar postres, pasos intermedios de platos, ...) por parte del staff de cocina (pinches, chefs, ...).
+### Comprobar la sintaxis del código
 
-### Problemas relacionados con los temas anteriores a resolver
+```bash
+make check
+```
 
-1. Lógica:
-    - Priorización de los pasos a realizar.
-    - Priorización de comandas según las subpartes de éstas (bebidas, entrantes, primeros platos, ...).
-    - Asignación de tareas.
-    - Concurrencia entre todas las tareas, pasos y comandas.
-2. Transmisión y almacenamiento de información:
-    - Envío de las comandas.
-    - Formato de visualización de las comandas.
-    - Registro de la información de cada comanda: Tiempo medio de cada tarea, salida de cada parte de la comanda (bebida, entrante, primer plato, ...).
+## Más Información
 
-## Mas documentación
-
-- [Contexto](./docs/contexto.md): Se describe el contexto del problema, información sobre el sector de la gastronomía y beneficios de nuestro sistema.
-- [Personas](./docs/personas.md)
-- [Planificación](./docs/planificacion.md)
-- [Ejemplo Situaciones Actuales vs Ideales](./docs/ejem_situaciones_actual_vs_ideal.md): Para ejemplificar los beneficios del sistema, se compara la organización actual de ciertos bares y restaurantes con la organización que este sistema propone. Se exponen los beneficios de ejecutar la organización que este sistema propone.
+- [Resto de documentación](./docs/README.md)
