@@ -8,3 +8,7 @@ type Comanda struct {
 	Platos    []Plato
 	Bebidas   []Bebida
 }
+
+func (c Comanda) greater(comanda Comanda) bool {
+	return c.Timestamp > comanda.Timestamp
+}
