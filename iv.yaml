@@ -1,5 +1,8 @@
 lenguaje: go
 
+entidad:
+  - types/models/instrumento.go
+
 automatizar:
   fichero: Makefile
   orden: make
