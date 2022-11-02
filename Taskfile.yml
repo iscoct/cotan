@@ -3,4 +3,4 @@ version: '3'
 tasks:
   check:
     cmds:
-      - go build ./types/...
+      - go fmt ./types/models
