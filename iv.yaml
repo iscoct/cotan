@@ -4,5 +4,5 @@ entidad:
   - types/models/instrumento.go
 
 automatizar:
-  fichero: Makefile
-  orden: make
+  fichero: Taskfile.yml
+  orden: task

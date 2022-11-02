@@ -18,6 +18,14 @@ go build
 go run .
 ```
 
+## Comprobación de que el programa compila
+
+```bash
+task check
+```
+
+## Más documentación
+
 - [Resto de documentación](./docs/README.md)
 - [Instalar Go](https://go.dev/doc/install)
 - [Instalar Task - Task Runner](https://taskfile.dev/installation/)
