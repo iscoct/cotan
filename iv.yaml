@@ -1,4 +1,2 @@
 lenguaje: go
-entidad: 
-  - types/models/plato.go
-  - types/models/instrumento.go
+entidad: types/models/instrumento.go
