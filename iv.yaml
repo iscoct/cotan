@@ -1,2 +1,8 @@
 lenguaje: go
-entidad: types/models/instrumento.go
+
+entidad:
+  - types/models/instrumento.go
+
+automatizar:
+  fichero: Taskfile.yml
+  orden: task
