@@ -2,6 +2,7 @@ lenguaje: go
 
 entidad:
   - types/models/instrumento.go
+  - types/models/paso.go
 
 automatizar:
   fichero: Taskfile.yml
