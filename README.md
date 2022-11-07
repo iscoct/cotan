@@ -24,6 +24,18 @@ go run .
 task check
 ```
 
+## Testear
+
+Sin coverage:
+
+```bash
+task test
+```
+
+```bash
+task coverage
+```
+
 ## Más documentación
 
 - [Resto de documentación](./docs/README.md)

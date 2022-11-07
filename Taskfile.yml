@@ -4,3 +4,11 @@ tasks:
   check:
     cmds:
       - gofmt -w ./types/models
+
+  test:
+    cmds:
+      - go test ./...
+
+  coverage:
+    cmds:
+      - go test ./... -cover
