@@ -1,9 +1,10 @@
 package models
 
 import (
-	"reflect"
 	"testing"
 	"time"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func createPlatos() []Plato {
@@ -55,9 +56,7 @@ func TestAddTiempoDePasoAInstrumento(t *testing.T) {
 	addTiempoDePasoAInstrumento(&uso_instrumento, paso)
 	diferencia_en_segundos := uso_instrumento.TiempoParaEstarLibre.Sub(current_moment).Seconds()
 
-	if diferencia_en_segundos != duracion_paso.Seconds() {
-		t.Fatalf("TestAddTiempoDePasoAInstrumento failed")
-	}
+	assert.Equal(t, diferencia_en_segundos, duracion_paso.Seconds(), "TestAddTiempoDePasoAInstrumento failed")
 }
 
 func TestRemovePasoDePasosNoOptimizadosPrimerElemento(t *testing.T) {
@@ -67,9 +66,8 @@ func TestRemovePasoDePasosNoOptimizadosPrimerElemento(t *testing.T) {
 	expected_pasos := append([]PasoElaboracion{}, pasos[1:]...)
 	pasos = removePasoDePasosNoOptimizados(pasos, pos_to_remove)
 
-	if !reflect.DeepEqual(expected_pasos, pasos) {
-		t.Fatalf("TestRemovePasoDePasosNoOptimizadosPrimerElemento failed")
-	}
+	result := assert.ObjectsAreEqualValues(pasos, expected_pasos)
+	assert.True(t, result, "TestRemovePasoDePasosNoOptimizadosPrimerElemento failed")
 }
 
 func TestRemovePasoDePasosNoOptimizadosUltimoElemento(t *testing.T) {
@@ -79,9 +77,8 @@ func TestRemovePasoDePasosNoOptimizadosUltimoElemento(t *testing.T) {
 	expected_pasos := append([]PasoElaboracion{}, pasos[1:]...)
 	pasos = removePasoDePasosNoOptimizados(pasos, pos_to_remove)
 
-	if !reflect.DeepEqual(expected_pasos, pasos) {
-		t.Fatalf("TestRemovePasoDePasosNoOptimizadosUltimoElemento failed")
-	}
+	result := assert.ObjectsAreEqualValues(pasos, expected_pasos)
+	assert.True(t, result, "TestRemovePasoDePasosNoOptimizadosUltimoElemento failed")
 }
 
 func TestGetIndexDePasosSinDependencias(t *testing.T) {
@@ -93,9 +90,8 @@ func TestGetIndexDePasosSinDependencias(t *testing.T) {
 	indices := getIndexDePasosSinDependencias(pasos)
 	expected_indices := []int{0, 2}
 
-	if !reflect.DeepEqual(indices, expected_indices) {
-		t.Fatalf("TestGetIndexDePasosSinDependencias failed")
-	}
+	result := assert.ObjectsAreEqualValues(expected_indices, indices)
+	assert.True(t, result, "TestGetIndexDePasosSinDependencias failed")
 }
 
 func TestGetPasosSinDependenciasOrdenadas(t *testing.T) {
@@ -111,9 +107,8 @@ func TestGetPasosSinDependenciasOrdenadas(t *testing.T) {
 
 	getPasosSinDependenciasOrdenados(pasos, indices_pasos_sin_deps)
 
-	if !reflect.DeepEqual(expected_indices, indices_pasos_sin_deps) {
-		t.Fatalf("TestGetPasosSinDependenciasOrdenadas failed")
-	}
+	result := assert.ObjectsAreEqualValues(expected_indices, indices_pasos_sin_deps)
+	assert.True(t, result, "TestGetPasosSinDependenciasOrdenadas failed")
 }
 
 func TestGetPosSiguientePasoEInstrumento(t *testing.T) {
@@ -136,13 +131,8 @@ func TestGetPosSiguientePasoEInstrumento(t *testing.T) {
 
 	expected_pos_instrumento, expected_pos_paso := 3, 2
 
-	if expected_pos_instrumento != pos_instrumento {
-		t.Errorf("TestGetPosSiguientePasoEInstrumento pos_instrumento no es el que se esperaba")
-	}
-
-	if expected_pos_paso != pos_paso {
-		t.Errorf("TestGetPosSiguientePasoEInstrumento pos_paso no es el que se esperaba")
-	}
+	assert.Equal(t, expected_pos_instrumento, pos_instrumento, "TestGetPosSiguientePasoEInstrumento pos_instrumento no es el que se esperaba")
+	assert.Equal(t, expected_pos_paso, pos_paso, "TestGetPosSiguientePasoEInstrumento pos_paso no es el que se esperaba")
 }
 
 func TestGetPosSiguientePasoEInstrumento2(t *testing.T) {
@@ -165,16 +155,11 @@ func TestGetPosSiguientePasoEInstrumento2(t *testing.T) {
 
 	expected_pos_instrumento, expected_pos_paso := 1, 3
 
-	if expected_pos_instrumento != pos_instrumento {
-		t.Errorf("TestGetPosSiguientePasoEInstrumento2 pos_instrumento no es el que se esperaba")
-	}
-
-	if expected_pos_paso != pos_paso {
-		t.Errorf("TestGetPosSiguientePasoEInstrumento2 pos_paso no es el que se esperaba")
-	}
+	assert.Equal(t, expected_pos_instrumento, pos_instrumento, "TestGetPosSiguientePasoEInstrumento2 pos_instrumento no es el que se esperaba")
+	assert.Equal(t, expected_pos_paso, pos_paso, "TestGetPosSiguientePasoEInstrumento2 pos_paso no es el que se esperaba")
 }
 
-func TestFindPasoParaInstrumento(t *testing.T) {
+func TestFindPasoParaInstrumentoCuandoTodosLosPasosTienenDependencias(t *testing.T) {
 	pasos := createPasos()
 	instrumentos := createUsoInstrumentos()
 	indices := []int{0, 1, 2}
@@ -187,24 +172,20 @@ func TestFindPasoParaInstrumento(t *testing.T) {
 
 	pos_paso := findPasoParaInstrumento(pasos, indices, instrumentos[0].Instrumento)
 
-	if pos_paso != -1 {
-		t.Fatalf("TestFindPasoParaInstrumento no devuelve la posición del paso esperada")
-	}
+	assert.Equal(t, pos_paso, -1, "TestFindPasoParaInstrumento no devuelve la posición del paso esperada")
 }
 
-func TestFindPasoParaInstrumento2(t *testing.T) {
+func TestFindPasoParaInstrumentoCuandoLosPasosNoTienenElInstrumentoQueSeEnvia(t *testing.T) {
 	pasos := createPasos()
 	instrumentos := createUsoInstrumentos()
 	indices := []int{0, 1, 2}
 
 	pos_paso := findPasoParaInstrumento(pasos, indices, instrumentos[0].Instrumento)
 
-	if pos_paso != -1 {
-		t.Fatalf("TestFindPasoParaInstrumento2 no devuelve la posición del paso esperada")
-	}
+	assert.Equal(t, pos_paso, -1, "TestFindPasoParaInstrumento2 no devuelve la posición del paso esperada")
 }
 
-func TestFindPasoParaInstrumento3(t *testing.T) {
+func TestFindPasoParaInstrumentoCuandoElInstrumentoSiEstaEnLosPasosYNoTienenDependencias(t *testing.T) {
 	pasos := createPasos()
 	instrumentos := createUsoInstrumentos()
 	indices := []int{0, 1, 2}
@@ -214,9 +195,7 @@ func TestFindPasoParaInstrumento3(t *testing.T) {
 
 	pos_paso := findPasoParaInstrumento(pasos, indices, instrumentos[0].Instrumento)
 
-	if pos_paso == -1 {
-		t.Fatalf("TestFindPasoParaInstrumento3 no devuelve la posición del paso esperada")
-	}
+	assert.NotEqual(t, pos_paso, -1, "TestFindPasoParaInstrumento3 no devuelve la posición del paso esperada")
 }
 
 func TestGetPasosOptimizados(t *testing.T) {
@@ -249,8 +228,6 @@ func TestGetPasosOptimizados(t *testing.T) {
 	}
 
 	for i, paso := range pasos_optimizados {
-		if paso.ID != expected_pasos_optimizados[i].ID {
-			t.Fatalf("TestGetPasosOptimizados failed")
-		}
+		assert.Equal(t, paso.ID, expected_pasos_optimizados[i].ID, "TestGetPasosOptimizados failed")
 	}
 }

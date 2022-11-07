@@ -1,8 +1,9 @@
 package models
 
 import (
-	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetPasosDeLasComandas(t *testing.T) {
@@ -18,7 +19,6 @@ func TestGetPasosDeLasComandas(t *testing.T) {
 	resultado_pasos := getPasosDeLasComandas([]Comanda{comanda_1, comanda_2})
 	expected_pasos := []PasoElaboracion{pasos[0], pasos[1], pasos[0], pasos[1], pasos[2], pasos[3]}
 
-	if !reflect.DeepEqual(resultado_pasos, expected_pasos) {
-		t.Fatalf("TestGetPasosDeLasComandas failed")
-	}
+	result := assert.ObjectsAreEqualValues(resultado_pasos, expected_pasos)
+	assert.True(t, result, "Expected pasos y resultado pasos no son iguales")
 }
