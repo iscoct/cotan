@@ -22,4 +22,4 @@ A continuación comento algunos gestores de tareas que se consideran para el pro
           - Debes de saber YAML.
 - [Realize](https://github.com/oxequa/realize): Aunque es una herramienta interesante, sobre todo el Live Reload (te permite recompilar proyectos cuando se modifican), está más pensada para controlar múltiples proyectos al mismo tiempo, lo cual para este proyecto en concreto, no será necesario.
 
-Por tanto, en este proyecto se usará **Task** dado que ya se está usando Go y porque así podemos hacer build del código sólo cuando se hayan modificado los ficheros del proyecto. 
+Por tanto, en este proyecto se usará **Task** dado que ya se está usando Go y porque así podemos hacer build del código sólo cuando se hayan modificado los ficheros del proyecto.
