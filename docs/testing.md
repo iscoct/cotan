@@ -84,3 +84,13 @@ No obstante, otra persona podría haber utilizado el testing nativo de Go o los 
 ## Recursos Adicionales
 
 - [Linode - Golang Unit Testing](https://www.linode.com/docs/guides/golang-unit-testing/)
+
+# Filosofía seguida a la hora de desarrollar tests
+
+## F.I.R.S.T
+
+- Fast: Los tests se ejecutan rápido, tardan de media 0.002s. El hecho de que se ejecuten rápido hace que a los desarrolles no les importe ejecutar muchas veces los tests dado que se tarda poco en ver los resultados. Además esto será importante cuando ejecutemos los tests en nuestro flujo de CI/CD.
+- Isolated: Los tests ejecutan partes del código aisladas. Hay un test que ejecuta toda la función de optimización de pasos, para ver que todas las partes del código se utilizan de manera correcta y no hay errores en el todo. Aún así, la mayoría de tests testean parten aisladas del código y no dependen de datos de terceros como bases de datos o API. Incluso cada función tiene 1 sólo assert, menos un test porque la función devuelve 2 valores y se comprueban que los 2 sean los esperados.
+- Repeatable: Los tests y el código siempre devuelven los valores esperados y se testea acorde a esto.
+- Self-validating: Una vez que he diseñado el tests, los datos de entrada y los datos de salida esperados no ha hecho, ni hará, falta hacer nada manual.
+- Thorough: Se ha pretendido diseñar casos de uso tanto fáciles como complejos para ver cómo se comporta el programa a partir de distintos datos de entrada. De hecho, el test que testea el optimizador de pasos es largo porque los datos han sido estudiados de tal manera que se compruebe que toda la lógica de negocio está realmente implementada.
