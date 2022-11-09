@@ -1,6 +1,14 @@
 name: CI/CD del proyecto
 
 on:
+  pull_request:
+    path-ignores:
+      - 'docs/**'
+    paths:
+      - 'go.mod'
+      - 'go.sum'
+      - 'Dockerfile'
+
   push:
     path-ignores:
       - 'docs/**'
