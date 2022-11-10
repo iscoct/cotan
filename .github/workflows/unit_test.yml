@@ -21,8 +21,9 @@ jobs:
         with:
           go-version: ${{matrix.go-version}}
 
-      - name: Install dependencies
+      - name: Install dependencies for specific go version
         run: |
+          sed -i 's/1.19/${{matrix.go-version}}/g' go.mod
           go mod download
           go install github.com/go-task/task/v3/cmd/task@latest
           go mod tidy
