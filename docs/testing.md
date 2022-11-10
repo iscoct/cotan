@@ -1,19 +1,20 @@
-# Task Runner
+# Criterios para escoger una librería de aserciones
 
-## Notes
+- Que permita crear fácilmente mocks.
+- Que permitan ejecutar código antes y después de un test específico o conjuntos de tests.
+- Que permita ejecutar los tests rápidos y de manera sencilla.
+- Preferiblemente que tenga aserciones para la comprobación de resultados rápida y simple.
 
-## Segunda revisión
+# Criterios para escoger el tests runner
 
-### Test runner
-
-## Tercera revisión - Resumen del proyecto del tío de Go del anterior objetivo
-
-- gocheck: Informes de errores útiles para ayudar a resolver problemas.
-- go-testdeep: Permite probar fácilmente las rutas HTTP API, utilizando operadores flexibles y el ayudante tdhttp.
+- Que permita conocer el rendimiento de los tests.
+- Que permita conocer el coverage de lo testeado, es decir, cuanta parte de nuestro código está cubierto por nuestros tests.
+- Que permita reconocer fácilmente los tests.
 
 # Task Runner
 
 En Go, el test runner más utilizado es el nativo de Go.
+Este test runner cumple con los criterios escogidos anteriormente.
 
 Hay otros como [el Test Runner de GoLand propietario de JetBrains](https://www.jetbrains.com/help/go/test-runner-tab.html) pero para utilizarlo necesitas GoLand.
 También hay otros como [Github - exercism/go-test-runner](https://github.com/exercism/go-test-runner) aunque realmente utilizan el runner de Go.
@@ -21,6 +22,8 @@ También hay otros como [Github - exercism/go-test-runner](https://github.com/ex
 La documentación de este runner se puede ver [aquí](https://github.com/exercism/go-test-runner), tanto su comando en CLI como el cómo busca este comando los tests en Go.
 
 # Testing en Go
+
+## Peculiaridades en el testeo de Go
 
 A continuación se dicen algunas peculiaridades de cómo se testea nativamente en Go (sin paquetes externos):
 
