@@ -15,5 +15,4 @@ test:
 CI:
   - .github/workflows/ci_cd.yml
   - .github/workflows/unit_test.yml
-  - .semaphore/semaphore_docker_test.yml
-  - .semaphore/semaphore_go_test.yml
+  - .semaphore/semaphore.yml
