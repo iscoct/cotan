@@ -15,25 +15,14 @@ variables:
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
-jobs:
-  - job: go_install_deps
-    steps:
-    - script: |
-        mkdir -p '$(GOBIN)'
-        mkdir -p '$(GOPATH)/pkg'
-        mkdir -p '$(modulePath)'
-        shopt -s extglob
-        shopt -s dotglob
-        mv !(gopath) '$(modulePath)'
-        echo '##vso[task.prependpath]$(GOBIN)'
-        echo '##vso[task.prependpath]$(GOROOT)/bin'
-      displayName: 'Set up the Go workspace'
-
-  - job: go_test
-    dependsOn: go_install_deps
-    displayName: 'Get dependencies, then test'
-    steps:
-    - script: |
-        go mod download
-        go mod tidy
-        go test ./...
+steps:
+- script: |
+    mkdir -p '$(GOBIN)'
+    mkdir -p '$(GOPATH)/pkg'
+    mkdir -p '$(modulePath)'
+    shopt -s extglob
+    shopt -s dotglob
+    mv !(gopath) '$(modulePath)'
+    echo '##vso[task.prependpath]$(GOBIN)'
+    echo '##vso[task.prependpath]$(GOROOT)/bin'
+  displayName: 'Set up the Go workspace'
