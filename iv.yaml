@@ -2,7 +2,12 @@ lenguaje: go
 
 entidad:
   - types/models/instrumento.go
+  - types/models/paso.go
 
 automatizar:
   fichero: Taskfile.yml
   orden: task
+
+test:
+  - types/models/comanda_test.go
+  - types/models/optimizador_test.go

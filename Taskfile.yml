@@ -4,3 +4,20 @@ tasks:
   check:
     cmds:
       - gofmt -w ./types/models
+
+  test:
+    cmds:
+      - go test ./...
+
+  test-inside-docker:
+    cmds:
+      - cp -R ./types ../ejecucion_tests
+      - cd ../ejecucion_tests && go mod tidy && go test ./...
+
+  docker:
+    cmds:
+      - docker run -u 1001 -t -v `pwd`:/app/test iscoct/cotan
+
+  coverage:
+    cmds:
+      - go test ./... -cover

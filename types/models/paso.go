@@ -5,9 +5,11 @@ import (
 )
 
 type PasoElaboracion struct {
-	Nombre 			string
-	Instrumento 	Instrumento
-	Duracion		int
-	TiempoInicio	time.Time
-	TiempoFinal		time.Time
+	ID               int
+	Nombre           string
+	Instrumento      Instrumento
+	Duracion         time.Duration
+	TiempoInicio     time.Time
+	TiempoFinal      time.Time
+	DependenciaPasos []int
 }
