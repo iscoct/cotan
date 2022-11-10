@@ -37,15 +37,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Replace go version
+        run:
+          ReplaceText “C:go.mod” 19 17
+
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
           go-version: ${{matrix.go-version}}
 
+      - name: Replace go version
+        run:
+          ReplaceText “C:go.mod” 19 17
+
       - name: Install dependencies for specific go version
-        shell: pwsh
         run: |
-          gc go.mod -replace '19', '17' | Out-File -encoding ASCII go.mod
           go mod download
           go mod tidy
 
