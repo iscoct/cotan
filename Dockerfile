@@ -1,4 +1,6 @@
-FROM golang:1.19-alpine
+ARG BASE_IMAGE="1.19-alpine"
+
+FROM golang:$BASE_IMAGE
 
 LABEL maintainer="iscoct@correo.ugr.es"
 
@@ -16,13 +18,8 @@ RUN mkdir ejecucion_tests
 WORKDIR /app/ejecucion_tests
 
 RUN go install github.com/go-task/task/v3/cmd/task@latest
-COPY go.mod ./
+COPY --chown=test:testgroup go.mod ./
 
-USER root
-
-RUN chown test go.mod
-
-USER test
 
 RUN go mod download
 
