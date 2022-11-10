@@ -1,15 +1,29 @@
 version: v1.0
-name: Docker
+name: Go
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: Build
+	- name: Docker Build And Run
     task:
       jobs:
-        - name: docker build
+        - name: Docker Build and Run
           commands:
             - checkout
             - docker build -t iscoct/cotan .
             - 'docker run -u 1001 -t -v `pwd`:/app/test iscoct/cotan'
+
+  - name: Go Test
+    task:
+      jobs:
+        - name: go test
+          commands:
+            - sem-version go 1.19
+            - export GO111MODULE=on
+            - export GOPATH=~/go
+            - 'export PATH=/home/semaphore/go/bin:$PATH'
+            - checkout
+            - go mod download
+            - go mod tidy
+            - go test ./...
