@@ -41,3 +41,11 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{matrix.go-version}}
+
+      - name: Install dependencies for specific go version
+        run: |
+          go mod download
+          go mod tidy
+
+      - name: Execute tests
+        run: 'go test -v ./...'
