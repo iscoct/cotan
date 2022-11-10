@@ -4,7 +4,6 @@ on:
   pull_request:
 
 jobs:
-
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -25,7 +24,6 @@ jobs:
         run: |
           sed -i 's/1.19/${{matrix.go-version}}/g' go.mod
           go mod download
-          go install github.com/go-task/task/v3/cmd/task@latest
           go mod tidy
 
       - name: Execute tests
