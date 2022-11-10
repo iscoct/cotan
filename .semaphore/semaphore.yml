@@ -18,7 +18,6 @@ blocks:
             - go mod download
             - go mod tidy
             - go test ./...
-            - go build -v .
   - name: Docker Build and Run
     task:
       jobs:
