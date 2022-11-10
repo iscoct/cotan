@@ -28,3 +28,16 @@ jobs:
 
       - name: Execute tests
         run: 'go test -v ./...'
+
+  test-windows:
+    runs-on: windows-latest
+
+    name: 'Go 1.19 windows test'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{matrix.go-version}}
