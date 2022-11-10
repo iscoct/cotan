@@ -11,3 +11,9 @@ automatizar:
 test:
   - types/models/comanda_test.go
   - types/models/optimizador_test.go
+
+CI:
+  - .github/workflows/ci_cd.yml
+  - .github/workflows/unit_test.yml
+  - .semaphore/semaphore_docker_test.yml
+  - .semaphore/semaphore_go_test.yml
