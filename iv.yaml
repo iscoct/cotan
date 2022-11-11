@@ -16,3 +16,4 @@ CI:
   - .github/workflows/ci_cd.yml
   - .github/workflows/unit_test.yml
   - .semaphore/semaphore.yml
+  - azure-pipelines.yml
