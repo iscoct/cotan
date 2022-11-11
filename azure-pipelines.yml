@@ -20,14 +20,14 @@ steps:
   inputs:
     version: '1.19.3'
 
-- task: Bash@3
+- task: Go@0
   inputs:
-    targetType: 'inline'
+    command: 'get'
+    arguments: './...'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-    script: |
-      echo "Haciendo go mod download..."
-      go mod download
-      echo "Haciendo go mod tidy..."
-      go mod tidy
-      echo "Haciendo go test ./..."
-      go test ./...
+
+- task: Go@0
+  inputs:
+    command: 'test'
+    arguments: './...'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
