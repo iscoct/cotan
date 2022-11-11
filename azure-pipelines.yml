@@ -31,8 +31,10 @@ steps:
     arguments: 'tidy'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
-- task: Go@0
+- task: Bash@3
   inputs:
-    command: 'test'
-    arguments: './...'
+    targetType: 'inline'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
+    script: |
+      go mod tidy
+      go test ./...
