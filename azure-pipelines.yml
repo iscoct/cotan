@@ -23,7 +23,7 @@ steps:
 - task: Go@0
   inputs:
     command: 'get'
-    arguments: './...'
+    arguments: '-t cotan/types/models'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
 - task: Go@0
