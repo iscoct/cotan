@@ -15,21 +15,22 @@ variables:
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
-steps:
-- script: |
-    mkdir -p '$(GOBIN)'
-    mkdir -p '$(GOPATH)/pkg'
-    mkdir -p '$(modulePath)'
-    shopt -s extglob
-    shopt -s dotglob
-    mv !(gopath) '$(modulePath)'
-    echo '##vso[task.prependpath]$(GOBIN)'
-    echo '##vso[task.prependpath]$(GOROOT)/bin'
-  displayName: 'Set up the Go workspace'
+steps: 
+- task: GoTool@0
+  inputs:
+    version: '1.19.3'
+- task: Go@0
+  inputs:
+    command: 'download'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
 
-- script: |
-    go mod download
-    go mod tidy
-    go test ./...
-  workingDirectory: '$(modulePath)'
-  displayName: 'Get dependencies, then build'
+- task: Go@0
+  inputs:
+    command: 'tidy'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
+
+- task: Go@0
+  inputs:
+    command: 'test'
+    arguments: './...'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
