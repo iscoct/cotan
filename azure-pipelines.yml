@@ -37,4 +37,7 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     script: |
       go mod tidy
+      ls
+      go get -t cotan/types/models
+      go mod tidy
       go test ./...
