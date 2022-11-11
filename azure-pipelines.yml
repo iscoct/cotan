@@ -21,12 +21,14 @@ steps:
     version: '1.19.3'
 - task: Go@0
   inputs:
-    command: 'download'
+    command: 'mod'
+    arguments: 'download'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
 - task: Go@0
   inputs:
-    command: 'tidy'
+    command: 'mod'
+    arguments: 'tidy'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
 - task: Go@0
