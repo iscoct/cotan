@@ -25,6 +25,9 @@ steps:
     targetType: 'inline'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
     script: |
+      echo "Haciendo go mod download..."
       go mod download
+      echo "Haciendo go mod tidy..."
       go mod tidy
+      echo "Haciendo go test ./..."
       go test ./...
