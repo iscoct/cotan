@@ -40,8 +40,10 @@ Semaphore CI se ha configurado e incluido en el repositorio porque con los requi
 De hecho, semaphore CI hará el build de la imagen de docker nuestra y ejecutará el comando que ejecuta: task docker
 También ejecutará Go en la versión 1.19.
 
-El problema y por lo que no es realmente válido es que aunque salga abajo en los checks al lado de Merge Request, no aparece arriba en los Checks.
-Se ha configurado con Github Apps pero no se ha conseguido que aparezca arriba.
+El único problema es que Semaphore CI hace uso de [statuses](https://docs.github.com/en/rest/commits/statuses) y no hace uso de [Checks API de Github](https://docs.github.com/en/rest/guides/getting-started-with-the-checks-api).
+
+De todas formas se incluye, podríamos hacer uso de la información que nos da Semaphore CI para prohibir mergear la Pull Request en la rama objetivo si alguno de los status tienen errores.
+Destacar que se ha configurado con Github Apps pero no se ha conseguido que aparezca arriba.
 
 ### Drone.io
 
@@ -52,3 +54,5 @@ Estudiada también, se ha visto que no tiene integración con Github Checks por 
 Cumple con todos los requisitos, de hecho está configurado en el proyecto y nos testea Go en la vesión 1.19.3.
 
 Dicho sea de paso que aunque ya no tiene capa gratuita directamente, sino que hay que pedirle permiso a Azure Pipelines, cosa que he hecho, explicándole la razón de la petición y el propósito del proyecto.
+
+En Azure Pipeline se ejecutan los tests en Go 1.19.3.
