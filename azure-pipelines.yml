@@ -6,6 +6,7 @@ variables:
   GOROOT: '/usr/local/go1.19' # Go installation path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
+  ROOT_PATH: '$(System.DefaultWorkingDirectory)'
 
 steps: 
 - task: GoTool@0
@@ -17,6 +18,11 @@ steps:
     command: 'get'
     arguments: '-t cotan/types/models'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'dir | Write-Output'
 
 - task: Go@0
   inputs:
