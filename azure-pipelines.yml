@@ -19,8 +19,18 @@ steps:
     arguments: '-t cotan/types/models'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'dir $(GOPATH) | Write-Output'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'dir $(modulePath) | Write-Output'
+
 - task: Go@0
   inputs:
     command: 'test'
-    arguments: '$(modulePath)/...'
+    arguments: './...'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
