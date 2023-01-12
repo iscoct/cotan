@@ -19,6 +19,11 @@ steps:
     arguments: '-t cotan/types/models'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: 'dir | Write-Output'
+
 - task: Go@0
   inputs:
     command: 'test'
