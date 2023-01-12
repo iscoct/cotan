@@ -6,6 +6,7 @@ variables:
   GOROOT: '/usr/local/go1.19' # Go installation path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
   modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
+  ROOT_PATH: '$(GOPATH)/src/github.com/$(build.repository.name)'
 
 steps: 
 - task: GoTool@0
