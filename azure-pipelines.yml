@@ -22,5 +22,5 @@ steps:
 - task: Go@0
   inputs:
     command: 'test'
-    arguments: './...'
-    workingDirectory: '$(modulePath)'
+    arguments: '$(modulePath)/...'
+    workingDirectory: '$(System.DefaultWorkingDirectory)'
