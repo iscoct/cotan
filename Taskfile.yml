@@ -7,12 +7,12 @@ tasks:
 
   test:
     cmds:
-      - go test ./...
+      - go test -v ./...
 
   test-inside-docker:
     cmds:
       - cp -R ./types ../ejecucion_tests
-      - cd ../ejecucion_tests && go mod tidy && go test ./...
+      - cd ../ejecucion_tests && go mod tidy && go test -v ./...
 
   docker:
     cmds:
@@ -20,4 +20,4 @@ tasks:
 
   coverage:
     cmds:
-      - go test ./... -cover
+      - go test -v ./... -cover
