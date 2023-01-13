@@ -12,7 +12,7 @@ tasks:
   test-inside-docker:
     cmds:
       - cp -R . ../ejecucion_tests
-      - cd ../ejecucion_tests && export ROOT_PATH=`pwd` && go mod tidy && go test -v ./...
+      - cd ../ejecucion_tests && go mod tidy && go test -v ./...
 
   docker:
     cmds:

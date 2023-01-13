@@ -1,9 +1,6 @@
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  ROOT_PATH: '$(System.DefaultWorkingDirectory)'
-
 steps:
 - task: GoTool@0
   inputs:
