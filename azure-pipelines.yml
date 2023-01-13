@@ -2,13 +2,9 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  GOBIN:  '$(GOPATH)/bin' # Go binaries path
-  GOROOT: '/usr/local/go1.19' # Go installation path
-  GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
-  modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
   ROOT_PATH: '$(GOPATH)/src/github.com/$(build.repository.name)'
 
-steps: 
+steps:
 - task: GoTool@0
   inputs:
     version: '1.19.3'
@@ -18,16 +14,6 @@ steps:
     command: 'get'
     arguments: '-t cotan/types/models'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'dir $(GOPATH) | Write-Output'
-
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: 'dir $(modulePath) | Write-Output'
 
 - task: Go@0
   inputs:
