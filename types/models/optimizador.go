@@ -1,6 +1,7 @@
 package models
 
 import (
+	"cotan/cmd/pkg/logger"
 	"time"
 )
 
@@ -19,6 +20,10 @@ func indexDependenciaPaso(paso PasoElaboracion, id_paso int) int {
 			i++
 		}
 	}
+
+	logger.Standard.Info("Pos devuelta: ", pos)
+	logger.Standard.Info("Id paso: ", id_paso)
+	logger.Standard.Info("Paso elaboracion: ", paso)
 
 	return pos
 }
@@ -133,12 +138,27 @@ func addAPasosElTiempoParaEstarLibreDeSuInstrumento(instrumentos []UsoInstrument
 	}
 }
 
+func printInitialInfo(comandas []Comanda, instrumentos []UsoInstrumento) {
+	logger.Standard.Info("Comandas: ", comandas)
+	logger.Standard.Info("Instrumentos: ", instrumentos)
+}
+
+func printPasosInfo(pasos_no_optimizados []PasoElaboracion, indices_pasos_sin_deps []int) {
+	logger.Standard.Info("Pasos no optimizados: ", pasos_no_optimizados)
+	logger.Standard.Info("Índices de pasos sin dependencias antes de ordenarlos: ", indices_pasos_sin_deps)
+}
+
 func getPasosOptimizados(instrumentos []UsoInstrumento, comandas []Comanda) (pasos_optimizados []PasoElaboracion) {
 	pasos_no_optimizados := getPasosDeLasComandas(comandas)
 	indices_pasos_sin_deps := getIndexDePasosSinDependencias(pasos_no_optimizados)
 
+	printInitialInfo(comandas, instrumentos)
+	printPasosInfo(pasos_no_optimizados, indices_pasos_sin_deps)
+
 	addAPasosElTiempoParaEstarLibreDeSuInstrumento(instrumentos, pasos_no_optimizados)
 	getPasosSinDependenciasOrdenados(pasos_no_optimizados, indices_pasos_sin_deps)
+
+	printPasosInfo(pasos_no_optimizados, indices_pasos_sin_deps)
 
 	for len(pasos_no_optimizados) > 0 {
 		pos_instrumento, pos_paso := GetPosSiguientePasoEInstrumento(pasos_no_optimizados, indices_pasos_sin_deps, instrumentos)
@@ -146,11 +166,15 @@ func getPasosOptimizados(instrumentos []UsoInstrumento, comandas []Comanda) (pas
 		addTiempoDePasoAInstrumento(&instrumentos[pos_instrumento], pasos_no_optimizados[pos_paso])
 		pasos_optimizados = append(pasos_optimizados, pasos_no_optimizados[pos_paso])
 		pasos_no_optimizados = removePasoDePasosNoOptimizados(pasos_no_optimizados, pos_paso)
-
 		indices_pasos_sin_deps = getIndexDePasosSinDependencias(pasos_no_optimizados)
+
+		printPasosInfo(pasos_no_optimizados, indices_pasos_sin_deps)
 
 		addAPasosElTiempoParaEstarLibreDeSuInstrumento(instrumentos, pasos_no_optimizados)
 		getPasosSinDependenciasOrdenados(pasos_no_optimizados, indices_pasos_sin_deps)
+
+		printPasosInfo(pasos_no_optimizados, indices_pasos_sin_deps)
+		logger.Standard.Info("Pasos optimizados: ", pasos_optimizados)
 	}
 
 	return pasos_optimizados
