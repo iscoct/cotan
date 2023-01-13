@@ -26,5 +26,5 @@ jobs:
           go mod tidy
       - name: Execute tests
         env:
-          ROOT_PATH: '${{GITHUB_WORKSPACE}}'
+          ROOT_PATH: '${{github.workspace}}'
         run: 'go test -v ./...'
