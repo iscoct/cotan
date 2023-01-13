@@ -2,7 +2,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  ROOT_PATH: '$(GOPATH)/src/github.com/$(build.repository.name)'
+  ROOT_PATH: '$(System.DefaultWorkingDirectory)'
 
 steps:
 - task: GoTool@0
