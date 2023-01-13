@@ -14,10 +14,11 @@ blocks:
             - export GO111MODULE=on
             - export GOPATH=~/go
             - 'export PATH=/home/semaphore/go/bin:$PATH'
+            - 'export ROOT_PATH=$(pwd)'
             - checkout
             - go mod download
             - go mod tidy
-            - go test ./...
+            - go test -v ./...
   - name: Docker Build and Run
     task:
       jobs:
