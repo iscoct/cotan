@@ -1,7 +1,6 @@
 name: Execute the project's unit tests
 
-on:
-  push:
+on: [push, pull_request]
 
 jobs:
   test:
@@ -11,6 +10,8 @@ jobs:
         go-version: ['1.18', '1.19']
 
     name: 'Go ${{matrix.go-version}} test'
+    env:
+      ROOT_PATH: '${{GITHUB_WORKSPACE}}'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
