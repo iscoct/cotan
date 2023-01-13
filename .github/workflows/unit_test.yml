@@ -1,7 +1,6 @@
 name: Execute the project's unit tests
 
-on:
-  push:
+on: push
 
 jobs:
   test:
