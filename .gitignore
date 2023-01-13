@@ -19,5 +19,4 @@ go.work
 
 ## Fetched from https://github.com/github/gitignore/blob/main/Go.gitignore
 
-cmd/pkg/config/basic_conf.json
-**/*conf.json
+*.env

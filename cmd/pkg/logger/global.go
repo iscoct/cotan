@@ -5,30 +5,20 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/spf13/viper"
+	"github.com/joho/godotenv"
 )
 
 var Standard Logger
-
-func readConfig(config_path string) error {
-	rootPath := os.Getenv("ROOT_PATH")
-
-	viper.SetConfigName(config_path)
-	viper.AddConfigPath(rootPath + "/cmd/pkg/config")
-	err := viper.ReadInConfig()
-
-	return err
-}
 
 func init() {
 	var ip string
 	var port int
 
-	err := readConfig("basic_conf")
+	err := godotenv.Load()
 
 	if err != nil {
-		ip = viper.GetString("server.ip")
-		port = viper.GetInt("server.port")
+		ip = os.Getenv("IP")
+		port, _ = strconv.Atoi(os.Getenv("PORT"))
 	} else {
 		ip = "127.0.0.1"
 		port = 8080

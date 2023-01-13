@@ -12,8 +12,7 @@ test:
   - types/models/comanda_test.go
   - types/models/optimizador_test.go
 
-configuracion:
-  - cmd/pkg/config/basic_conf.json
+configuracion: .env
 
 CI:
   - .github/workflows/ci_cd.yml
