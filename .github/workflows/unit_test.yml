@@ -1,7 +1,6 @@
 name: Execute the project's unit tests
 
-on:
-  push:
+on: [push, pull_request]
 
 jobs:
   test:
@@ -26,4 +25,6 @@ jobs:
           go mod download
           go mod tidy
       - name: Execute tests
+        env:
+          ROOT_PATH: '${{env.GITHUB_WORKSPACE}}'
         run: 'go test -v ./...'
