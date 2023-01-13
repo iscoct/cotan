@@ -18,7 +18,6 @@ blocks:
             - go mod download
             - go mod tidy
             - 'export ROOT_PATH=$(pwd)'
-            - ls -R $ROOT_PATH
             - go test -v ./...
   - name: Docker Build and Run
     task:

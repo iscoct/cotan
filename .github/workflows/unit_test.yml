@@ -11,7 +11,7 @@ jobs:
 
     name: 'Go ${{matrix.go-version}} test'
     env:
-      ROOT_PATH: ${{GITHUB_WORKSPACE}}
+      ROOT_PATH: '${{GITHUB_WORKSPACE}}'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
