@@ -17,7 +17,9 @@ blocks:
             - checkout
             - go mod download
             - go mod tidy
-            - go test ./...
+            - 'export ROOT_PATH=$(pwd)'
+            - ls -R $ROOT_PATH
+            - go test -v ./...
   - name: Docker Build and Run
     task:
       jobs:
