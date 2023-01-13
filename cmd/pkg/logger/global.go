@@ -1,7 +1,6 @@
 package logger
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"strconv"
@@ -11,23 +10,30 @@ import (
 
 var Standard Logger
 
-func readConfig(config_path string) {
+func readConfig(config_path string) error {
 	rootPath := os.Getenv("ROOT_PATH")
 
 	viper.SetConfigName(config_path)
 	viper.AddConfigPath(rootPath + "/cmd/pkg/config")
 	err := viper.ReadInConfig()
 
-	if err != nil {
-		panic(fmt.Errorf("Fatal error config file: %s \n", err))
-	}
+	return err
 }
 
 func init() {
-	readConfig("basic_conf")
+	var ip string
+	var port int
 
-	ip := viper.GetString("server.ip")
-	port := viper.GetInt("server.port")
+	err := readConfig("basic_conf")
+
+	if err != nil {
+		ip = viper.GetString("server.ip")
+		port = viper.GetInt("server.port")
+	} else {
+		ip = "127.0.0.1"
+		port = 8080
+	}
+
 	machine_format := "port: " + strconv.Itoa(port) + " - ip: " + ip
 
 	info_logger := log.New(os.Stdout, "INFO - "+machine_format+": ", log.LstdFlags)
