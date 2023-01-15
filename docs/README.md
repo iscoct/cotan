@@ -32,3 +32,4 @@ Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y prior
 - [Selección y razonamiento de la imagen base del Dockerfile escogida](./seleccion_imagen.md)
 - [Selección y razonamiento de la libreriá de logs escogida](./sistema_de_logs.md)
 - [Explicación de la estrategia de inyección de dependencias escogida en Go](./inyeccion_de_dependencias.md)
+- [Selección y razonamiento de la librería de logs escogida](./sistema_de_configuracion.md)
