@@ -12,7 +12,7 @@ test:
   - types/models/comanda_test.go
   - types/models/optimizador_test.go
 
-configuracion: .env
+configuracion: cmd/pkg/config/conf_reader.go
 
 CI:
   - .github/workflows/ci_cd.yml

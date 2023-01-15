@@ -5,26 +5,15 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/joho/godotenv"
+	"cotan/cmd/pkg/config"
 )
 
 var Standard Logger
 
 func init() {
-	var ip string
-	var port int
+	confReader := config.GetConfReader()
 
-	err := godotenv.Load()
-
-	if err != nil {
-		ip = os.Getenv("IP")
-		port, _ = strconv.Atoi(os.Getenv("PORT"))
-	} else {
-		ip = "127.0.0.1"
-		port = 8080
-	}
-
-	machine_format := "port: " + strconv.Itoa(port) + " - ip: " + ip
+	machine_format := "port: " + strconv.Itoa(confReader.Port) + " - ip: " + confReader.IP
 
 	info_logger := log.New(os.Stdout, "INFO - "+machine_format+": ", log.LstdFlags)
 	warning_logger := log.New(os.Stdout, "WARNING - "+machine_format+": ", log.LstdFlags)
