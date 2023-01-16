@@ -30,3 +30,6 @@ Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y prior
 - [Ejemplo Situaciones Actuales vs Ideales](./ejem_situaciones_actual_vs_ideal.md): Para ejemplificar los beneficios del sistema, se compara la organización actual de ciertos bares y restaurantes con la organización que este sistema propone. Se exponen los beneficios de ejecutar la organización que este sistema propone.
 - [Test runner y librería de aserciones](./testing.md)
 - [Selección y razonamiento de la imagen base del Dockerfile escogida](./seleccion_imagen.md)
+- [Selección y razonamiento de la libreriá de logs escogida](./sistema_de_logs.md)
+- [Explicación de la estrategia de inyección de dependencias escogida en Go](./inyeccion_de_dependencias.md)
+- [Selección y razonamiento de la librería de logs escogida](./sistema_de_configuracion.md)
