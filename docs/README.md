@@ -33,3 +33,5 @@ Tiempo medio de comunicación del staff (camareros, pinches, chefs, ...) y prior
 - [Selección y razonamiento de la libreriá de logs escogida](./sistema_de_logs.md)
 - [Explicación de la estrategia de inyección de dependencias escogida en Go](./inyeccion_de_dependencias.md)
 - [Selección y razonamiento de la librería de logs escogida](./sistema_de_configuracion.md)
+- [Selección y razonamiento de la librería de API escogida](./libreria_api_rest.md)
+- [Diseño de la API REST](./api_rest_endpoints.md)
