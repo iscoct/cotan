@@ -13,6 +13,7 @@ test:
   - types/models/optimizador_test.go
 
 configuracion: cmd/pkg/config/conf_reader.go
+framework: Gin Web Framework
 
 CI:
   - .github/workflows/ci_cd.yml
